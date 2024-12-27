@@ -1,602 +1,87 @@
-<div class="w-[1920px] h-[3196px] relative overflow-hidden bg-white">
-  <div class="w-[1920px] h-[763px]">
-    <div class="relative w-full ">
-      <div class=" w-full h-[600px] bg-[url('/assets/top.jpg')] z-10">
-
-        <div class="pt-40 font-bold text-[#ffefeb] text-base md:text-lg tracking-[1.80px] text-center">
+<div class="container mx-auto px-4">
+  <!-- Hero Section -->
+  <div class="w-full">
+    <div class="bg-cover w-full h-[200px] md:h-[400px] lg:h-[300px] bg-[url('/assets/top.jpg')] z-10">
+      <div class="flex flex-col items-center justify-center h-full">
+        <div class="font-bold text-[#ffefeb] text-base md:text-lg tracking-[1.80px] mb-4">
           TOURS
         </div>
-
-        <div class=" font-normal text-white text-4xl md:text-6xl lg:text-[157.4px] text-center leading-tight">
+        <div class="font-normal text-white text-2xl md:text-4xl lg:text-8xl text-center leading-tight">
           Our Packages
         </div>
       </div>
-
     </div>
   </div>
-  <div
-    class="w-[1331px] h-[1857px] absolute left-[276px] top-[816px] bg-white"
-    style="box-shadow: 0px 4px 48px 12px rgba(0,0,0,0.09);"
-  ></div>
-  <p class="w-[762px] h-[246px] absolute left-[315px] top-[1003px] text-base text-left text-black">
-  {{ tourDescription }}
-  </p>
-  <p class="w-[762px] h-[81px] absolute left-[315px] top-[2006px] text-base text-left text-black">
-    Ex optio sequi et quos praesentium in nostrum labore nam rerum iusto aut magni nesciunt? Quo
-    quidem neque iste expedita est dolor similique ut quasi maxime ut deserunt autem At praesentium
-    voluptatem aut libero nisi.
-  </p>
-  <p class="absolute left-[595px] top-[1285px] text-base text-left text-black">
-     {{ tourName }}
-  </p>
-  <p class="absolute left-[595px] top-[1359px] text-base text-left text-black">
-    {{tourDestination}}
-  </p>
-  <p class="absolute left-[595px] top-[1431px] text-base text-left text-black">
-    : Approximately  {{tourDepartureTime}}
-  </p>
-  <p class="absolute left-[595px] top-[1504px] text-base text-left text-black">
-    : Approximately  {{tourReturnTime}}
-  </p>
-  <p class="absolute left-[595px] top-[1576px] text-base text-left text-black">
-    : Casual, comfortable and light
-  </p>
-  <p class="absolute left-[619px] top-[1647px] text-base text-left text-black">Gallery Ticket</p>
-  <p class="absolute left-[619px] top-[1720px] text-base text-left text-black">
-    5 star Accomodations
-  </p>
-  <p class="absolute left-[619px] top-[1771px] text-base text-left text-black">Breakfast</p>
-  <p class="absolute left-[858px] top-[1647px] text-base text-left text-black">Lunch</p>
-  <p class="absolute left-[858px] top-[1720px] text-base text-left text-black">Airport Transfer</p>
-  <p class="absolute left-[858px] top-[1771px] text-base text-left text-black">Personal Guide</p>
-  <svg
-    width="26"
-    height="26"
-    viewBox="0 0 26 26"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    class="w-[26px] h-[26px] absolute left-[1156px] top-[744px]"
-    preserveAspectRatio="xMidYMid meet"
-  >
-    <g clip-path="url(#clip0_108_57)">
-      <path
-        d="M23.1977 7.22266H2.80211C2.44201 7.22266 2.09665 7.36571 1.84202 7.62034C1.58739 7.87497 1.44434 8.22033 1.44434 8.58043V21.7538C1.44434 22.1139 1.58739 22.4592 1.84202 22.7139C2.09665 22.9685 2.44201 23.1115 2.80211 23.1115H23.1977C23.5578 23.1115 23.9031 22.9685 24.1578 22.7139C24.4124 22.4592 24.5554 22.1139 24.5554 21.7538V8.58043C24.5554 8.22033 24.4124 7.87497 24.1578 7.62034C23.9031 7.36571 23.5578 7.22266 23.1977 7.22266ZM23.111 21.6671H2.88878V8.6671H23.111V21.6671Z"
-        fill="black"
-      ></path>
-      <path
-        d="M6.18229 14.0472C6.61082 14.0472 7.02972 13.9201 7.38603 13.6821C7.74233 13.444 8.02004 13.1056 8.18403 12.7097C8.34802 12.3138 8.39093 11.8781 8.30733 11.4578C8.22372 11.0375 8.01737 10.6515 7.71436 10.3485C7.41134 10.0455 7.02528 9.8391 6.60499 9.7555C6.1847 9.6719 5.74905 9.71481 5.35314 9.8788C4.95724 10.0428 4.61885 10.3205 4.38077 10.6768C4.1427 11.0331 4.01562 11.452 4.01562 11.8805C4.01562 12.4552 4.2439 13.0063 4.65023 13.4126C5.05656 13.8189 5.60766 14.0472 6.18229 14.0472ZM6.18229 10.725C6.41198 10.7192 6.63817 10.7821 6.83196 10.9055C7.02576 11.029 7.17835 11.2074 7.27026 11.4179C7.36217 11.6285 7.38921 11.8617 7.34794 12.0877C7.30667 12.3138 7.19896 12.5224 7.03856 12.6869C6.87816 12.8514 6.67236 12.9643 6.44746 13.0113C6.22255 13.0583 5.98874 13.0372 5.7759 12.9506C5.56306 12.8641 5.38086 12.716 5.25256 12.5254C5.12426 12.3348 5.0557 12.1103 5.05563 11.8805C5.05553 11.579 5.1733 11.2894 5.3838 11.0735C5.5943 10.8576 5.88085 10.7325 6.18229 10.725Z"
-        fill="black"
-      ></path>
-      <path
-        d="M5.70539 20.222L10.0387 15.8886L12.3354 18.1853L10.2987 20.222H11.7432L17.1309 14.8342L21.6665 19.3336V17.8892L17.4776 13.722C17.3816 13.6267 17.2518 13.5732 17.1165 13.5732C16.9812 13.5732 16.8514 13.6267 16.7554 13.722L13.0287 17.4486L10.3782 14.8053C10.2821 14.71 10.1523 14.6566 10.0171 14.6566C9.88178 14.6566 9.75199 14.71 9.65595 14.8053L4.27539 20.222H5.70539Z"
-        fill="black"
-      ></path>
-      <path
-        d="M21.7679 2.16656C21.7679 1.97501 21.6918 1.79131 21.5564 1.65587C21.4209 1.52043 21.2372 1.44434 21.0457 1.44434H5.15679C4.96525 1.44434 4.78155 1.52043 4.6461 1.65587C4.51066 1.79131 4.43457 1.97501 4.43457 2.16656V2.88878H21.7679V2.16656Z"
-        fill="black"
-      ></path>
-      <path
-        d="M23.1978 5.05523C23.1978 4.86368 23.1217 4.67998 22.9863 4.54454C22.8508 4.4091 22.6671 4.33301 22.4756 4.33301H3.69781C3.50626 4.33301 3.32256 4.4091 3.18712 4.54454C3.05168 4.67998 2.97559 4.86368 2.97559 5.05523V5.77745H23.1978V5.05523Z"
-        fill="black"
-      ></path>
-    </g>
-    <defs>
-      <clipPath id="clip0_108_57"><rect width="26" height="26" fill="white"></rect></clipPath>
-    </defs>
-  </svg>
-  <div class="absolute left-[954.5px] top-[824px]"></div>
-  <div class="w-[471px] h-[77px]">
-    <p
-      class="absolute left-[536px] top-[893px] text-[29.032882690429688px] font-medium text-center capitalize text-[#df6951]"
-    >
-      $ {{tourPrice}}
-    </p>
-    <p class="absolute left-[699px] top-[903px] text-base text-center capitalize text-[#7d7d7d]">
-      Per Couple
-    </p>
-    <svg
-      width="14"
-      height="31"
-      viewBox="0 0 14 31"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      class="absolute left-[680px] top-[930.82px]"
-      preserveAspectRatio="xMidYMid meet"
-    >
-      <line
-        x1="1.06484"
-        y1="30.4651"
-        x2="12.4003"
-        y2="0.540089"
-        stroke="#7D7D7D"
-        stroke-width="2"
-      ></line>
-    </svg>
-    <p
-      class="absolute left-[315px] top-[896px] text-[31.622024536132812px] font-bold text-left capitalize text-[#181e4b]"
-    >
-      {{ tourName }}
-    </p>
-    <svg
-      width="92"
-      height="16"
-      viewBox="0 0 92 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-[92px] h-4"
-      preserveAspectRatio="none"
-    >
-      <g clip-path="url(#clip0_0_1195)">
-        <path
-          d="M3.61212 15.4425C3.22612 15.6405 2.78812 15.2935 2.86612 14.8505L3.69612 10.1205L0.173118 6.76452C-0.155882 6.45052 0.0151183 5.87652 0.456118 5.81452L5.35412 5.11852L7.53812 0.791523C7.73512 0.401523 8.26812 0.401523 8.46512 0.791523L10.6491 5.11852L15.5471 5.81452C15.9881 5.87652 16.1591 6.45052 15.8291 6.76452L12.3071 10.1205L13.1371 14.8505C13.2151 15.2935 12.7771 15.6405 12.3911 15.4425L8.00012 13.1865L3.61112 15.4425H3.61212Z"
-          fill="#FFBA0A"
-        ></path>
-      </g>
-      <g clip-path="url(#clip1_0_1195)">
-        <path
-          d="M22.6121 15.4425C22.2261 15.6405 21.7881 15.2935 21.8661 14.8505L22.6961 10.1205L19.1731 6.76452C18.8441 6.45052 19.0151 5.87652 19.4561 5.81452L24.3541 5.11852L26.5381 0.791523C26.7351 0.401523 27.2681 0.401523 27.4651 0.791523L29.6491 5.11852L34.5471 5.81452C34.9881 5.87652 35.1591 6.45052 34.8291 6.76452L31.3071 10.1205L32.1371 14.8505C32.2151 15.2935 31.7771 15.6405 31.3911 15.4425L27.0001 13.1865L22.6111 15.4425H22.6121Z"
-          fill="#FFBA0A"
-        ></path>
-      </g>
-      <g clip-path="url(#clip2_0_1195)">
-        <path
-          d="M41.6121 15.4425C41.2261 15.6405 40.7881 15.2935 40.8661 14.8505L41.6961 10.1205L38.1731 6.76452C37.8441 6.45052 38.0151 5.87652 38.4561 5.81452L43.3541 5.11852L45.5381 0.791523C45.7351 0.401523 46.2681 0.401523 46.4651 0.791523L48.6491 5.11852L53.5471 5.81452C53.9881 5.87652 54.1591 6.45052 53.8291 6.76452L50.3071 10.1205L51.1371 14.8505C51.2151 15.2935 50.7771 15.6405 50.3911 15.4425L46.0001 13.1865L41.6111 15.4425H41.6121Z"
-          fill="#FFBA0A"
-        ></path>
-      </g>
-      <g clip-path="url(#clip3_0_1195)">
-        <path
-          d="M60.6121 15.4425C60.2261 15.6405 59.7881 15.2935 59.8661 14.8505L60.6961 10.1205L57.1731 6.76452C56.8441 6.45052 57.0151 5.87652 57.4561 5.81452L62.3541 5.11852L64.5381 0.791523C64.7351 0.401523 65.2681 0.401523 65.4651 0.791523L67.6491 5.11852L72.5471 5.81452C72.9881 5.87652 73.1591 6.45052 72.8291 6.76452L69.3071 10.1205L70.1371 14.8505C70.2151 15.2935 69.7771 15.6405 69.3911 15.4425L65.0001 13.1865L60.6111 15.4425H60.6121Z"
-          fill="#FFBA0A"
-        ></path>
-      </g>
-      <g clip-path="url(#clip4_0_1195)">
-        <path
-          d="M79.6121 15.4425C79.2261 15.6405 78.7881 15.2935 78.8661 14.8505L79.6961 10.1205L76.1731 6.76452C75.8441 6.45052 76.0151 5.87652 76.4561 5.81452L81.3541 5.11852L83.5381 0.791523C83.7351 0.401523 84.2681 0.401523 84.4651 0.791523L86.6491 5.11852L91.5471 5.81452C91.9881 5.87652 92.1591 6.45052 91.8291 6.76452L88.3071 10.1205L89.1371 14.8505C89.2151 15.2935 88.7771 15.6405 88.3911 15.4425L84.0001 13.1865L79.6111 15.4425H79.6121Z"
-          fill="#FFBA0A"
-        ></path>
-      </g>
-      <defs>
-        <clipPath id="clip0_0_1195"><rect width="16" height="16" fill="white"></rect></clipPath>
-        <clipPath id="clip1_0_1195">
-          <rect width="16" height="16" fill="white" transform="translate(19)"></rect>
-        </clipPath>
-        <clipPath id="clip2_0_1195">
-          <rect width="16" height="16" fill="white" transform="translate(38)"></rect>
-        </clipPath>
-        <clipPath id="clip3_0_1195">
-          <rect width="16" height="16" fill="white" transform="translate(57)"></rect>
-        </clipPath>
-        <clipPath id="clip4_0_1195">
-          <rect width="16" height="16" fill="white" transform="translate(76)"></rect>
-        </clipPath>
-      </defs>
-    </svg>
-    <p class="absolute left-[423px] top-[944px] text-base font-medium text-center text-[#5e6282]">
-      (2.3k review)
-    </p>
-  </div>
-  <p
-    class="absolute left-[315px] top-[1282px] text-xl font-bold text-left capitalize text-[#df6951]"
-  >
-    Destination
-  </p>
-  <p
-    class="absolute left-[315px] top-[1355px] text-xl font-bold text-left capitalize text-[#df6951]"
-  >
-    Departure
-  </p>
-  <p
-    class="absolute left-[315px] top-[1428px] text-xl font-bold text-left capitalize text-[#df6951]"
-  >
-    Departure Time
-  </p>
-  <p
-    class="absolute left-[315px] top-[1501px] text-xl font-bold text-left capitalize text-[#df6951]"
-  >
-    Return Time
-  </p>
-  <p
-    class="absolute left-[315px] top-[1574px] text-xl font-bold text-left capitalize text-[#df6951]"
-  >
-    Dress Code
-  </p>
-  <p
-    class="absolute left-[315px] top-[1647px] text-xl font-bold text-left capitalize text-[#df6951]"
-  >
-    Not Included
-  </p>
-  <p
-    class="absolute left-[315px] top-[1647px] text-xl font-bold text-left capitalize text-[#df6951]"
-  >
-    Not Included
-  </p>
-  <p
-    class="absolute left-[315px] top-[1720px] text-xl font-bold text-left capitalize text-[#df6951]"
-  >
-    Included
-  </p>
 
-  <p class="absolute left-80 top-[1913px] text-[50px] font-bold text-left text-[#181e4b]">
-    From our gallery
-  </p>
-  <div *ngIf="tourImages && tourImages.length > 0">
+  <!-- Tour Info Grid -->
+  <div class="flex gap-6 py-8">
+    <div>
+      <div class="space-y-4">
+        <div class="flex items-center gap-4">
+          <h2 class="text-2xl font-bold text-[#353a61]">Tour Details</h2>
+          <p class="text-[20px] font-medium text-[#df6951]">$ {{tourPrice}}</p>
+          <p class="text-base -mx-3 text-[#7d7d7d]">/Per Couple</p>
+        </div>
 
-  <div *ngFor="let image of tourImages" class="absolute left-80 top-[2203px] text-[50px] font-bold text-left">
-    <img [src]="image" alt="Tour Image" style="width: 100%; max-width: 300px; margin-bottom: 10px;">
-  </div>
-  </div>
+        <p class="text-base text-black">{{ tourDescription }}</p>
+        <p class="text-base text-black">{{ tourName }}</p>
+        <div class="flex items-center  gap-2">
+          <h2 class="text-xl font-bold  text-[#df6951]">Destination</h2>
+          <p class="text-base text-black">{{ tourDestination }}</p>
+        </div>
+        <div class="flex items-center  gap-2">
+          <h2 class="text-xl font-bold  text-[#df6951]">Destination</h2>
+          <p class="text-base text-black">{{ tourDestination }}</p>
+        </div>
+        <div class="flex items-center  gap-2">
+          <h2 class="text-xl font-bold  text-[#df6951]">Departure Time</h2>
+          <p class="text-base text-black">{{ tourDepartureTime }}</p>
+        </div>
+        <div class="flex items-center  gap-2">
+          <h2 class="text-xl font-bold  text-[#df6951]">Return Time</h2>
+          <p class="text-base text-black">{{ tourReturnTime }}</p>
+        </div>
+        <div class="flex items-center  gap-2">
+          <h2 class="text-xl font-bold  text-[#df6951]">Included</h2>
+          <div class="flex space-x-2 text-lg text-black">
+            <p class="text-base text-black">Gallery Ticket</p>
+            <p class="text-base text-black">5 star Accommodations</p>
+            <p class="text-base text-black">Breakfast</p>
+          </div>
+        </div>
+        <div class="grid-cols-2 items-center  gap-2">
+          <h2 class="text-xl font-bold  text-[#df6951]">Included</h2>
+          <div class="flex space-x-2 text-lg text-black">
+            <p class="text-base text-black">Lunch</p>
+            <p class="text-base text-black">Airport Transfer</p>
+            <p class="text-base text-black">Personal Guide</p>
+          </div>
+        </div>
+      </div>
 
-  <div class="w-[481px] h-[977px]">
-    <div class="w-[481px] h-[977px] absolute left-[1084.5px] top-[863.5px] bg-[#ededed]"></div>
-    <div class="w-[359px] h-[76px] absolute left-[1145.5px] top-[1073.5px] bg-white"></div>
-    <p class="absolute left-[1201px] top-[1100px] text-lg text-left text-black/[0.26]">Name</p>
-    <div class="w-[359px] h-[76px] absolute left-[1145.5px] top-[1158.5px] bg-white"></div>
-    <p class="absolute left-[1201px] top-[1184px] text-lg text-left text-black/[0.26]">Email</p>
-    <div class="w-[359px] h-[76px] absolute left-[1145.5px] top-[1243.5px] bg-white"></div>
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 20 20"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-5 h-5 absolute left-[1171px] top-[1272px]"
-      preserveAspectRatio="none"
-    >
-      <g clip-path="url(#clip0_0_1317)">
-        <path
-          d="M17.778 3.33301H2.22244C1.92775 3.33301 1.64514 3.45007 1.43676 3.65844C1.22839 3.86682 1.11133 4.14943 1.11133 4.44412V15.5552C1.11133 15.8499 1.22839 16.1325 1.43676 16.3409C1.64514 16.5493 1.92775 16.6663 2.22244 16.6663H17.778C18.0727 16.6663 18.3553 16.5493 18.5637 16.3409C18.772 16.1325 18.8891 15.8499 18.8891 15.5552V4.44412C18.8891 4.14943 18.772 3.86682 18.5637 3.65844C18.3553 3.45007 18.0727 3.33301 17.778 3.33301ZM16.9224 15.5552H3.14466L7.03355 11.533L6.23355 10.7608L2.22244 14.9108V5.28856L9.128 12.1608C9.33618 12.3677 9.61779 12.4839 9.91133 12.4839C10.2049 12.4839 10.4865 12.3677 10.6947 12.1608L17.778 5.11634V14.8386L13.6891 10.7497L12.9058 11.533L16.9224 15.5552ZM2.95022 4.44412H16.878L9.91133 11.3719L2.95022 4.44412Z"
-          fill="black"
-          fill-opacity="0.26"
-        ></path>
-      </g>
-      <defs>
-        <clipPath id="clip0_0_1317"><rect width="20" height="20" fill="white"></rect></clipPath>
-      </defs>
-    </svg>
-    <p class="absolute left-[1201px] top-[1269px] text-lg text-left text-black/[0.26]">
-      Confirm Email
-    </p>
-    <div class="w-[359px] h-[76px] absolute left-[1145.5px] top-[1328.5px] bg-white"></div>
-    <p class="absolute left-[1201px] top-[1354px] text-lg text-left text-black/[0.26]">Phone</p>
-    <div class="w-[359px] h-[76px] absolute left-[1145.5px] top-[1413.5px] bg-white"></div>
-    <div class="w-[359px] h-[76px] absolute left-[1145.5px] top-[1498.5px] bg-white"></div>
-    <p class="absolute left-[1201px] top-[1524px] text-lg text-left text-black/[0.26]">
-      Number of ticket
-    </p>
-    <div class="w-[359px] h-[76px] absolute left-[1145.5px] top-[1583.5px] bg-white"></div>
-    <p class="absolute left-[1201px] top-[1596px] text-lg text-left text-black/[0.26]">Message</p>
-    <p
-      class="w-[401px] h-[76px] absolute left-[1123px] top-[966px] text-base text-center text-black"
-    >
-      Ex optio sequi et quos praesentium in nostrum labore nam rerum iusto aut magni nesciunt? Quo
-      quidem neque iste expedita est dolo.
-    </p>
-    <p class="absolute left-[1167px] top-[903px] text-[42px] font-bold text-center text-[#181e4b]">
-      Book This Tour
-    </p>
-    <div
-      class="w-[176.56px] h-[56.42px] absolute left-[1238px] top-[1756px] rounded-[10px] bg-[#df6951]"
-      style="box-shadow: 0px 20px 35px 0 rgba(223,105,81,0.15);"
-    >
-      <p
-        class="absolute left-[47px] top-4 text-[16.71587562561035px] font-semibold text-center text-white"
-      >
-        Book Now
-      </p>
+      <!-- Time Details -->
+
+
+      <!-- Price Section -->
+      <div class="space-y-4">
+
+      </div>
     </div>
-    <div
-      class="w-[176.56px] h-[56.42px] absolute left-[1238px] top-[1680px] rounded-[10px] bg-[#df6951]"
-      style="box-shadow: 0px 20px 35px 0 rgba(223,105,81,0.15);"
-    >
-      <p
-        class="absolute left-[11px] top-4 text-[16.71587562561035px] font-semibold text-center text-white"
-      >
-        Check Availability
-      </p>
+
+    <!-- Included Features -->
+
+</div>
+    <div>
+
     </div>
-    <p class="absolute left-[1201px] top-[1439px] text-lg text-left text-black/[0.26]">dd-mm-yy</p>
-    <svg
-      width="11"
-      height="11"
-      viewBox="0 0 11 11"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      class="absolute left-[1501.5px] top-[1646.5px]"
-      preserveAspectRatio="none"
-    >
-      <line x1="10.3536" y1="0.353553" x2="0.353554" y2="10.3536" stroke="#A0A0A0"></line></svg
-    ><svg
-    width="21"
-    height="21"
-    viewBox="0 0 21 21"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    class="absolute left-[1501.5px] top-[1636.5px]"
-    preserveAspectRatio="none"
-  >
-    <line x1="20.3536" y1="0.353553" x2="0.353554" y2="20.3536" stroke="#A0A0A0"></line></svg
-  ><svg
-    width="20"
-    height="20"
-    viewBox="0 0 20 20"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    class="w-5 h-5 absolute left-[1171px] top-[1102px]"
-    preserveAspectRatio="none"
-  >
-    <path
-      d="M10 8C11.7 8 13.06 6.65 13.06 5C13.06 3.35 11.7 2 10 2C8.3 2 6.94 3.35 6.94 5C6.94 6.65 8.3 8 10 8ZM10 10C7.2 10 4.94 7.76 4.94 5C4.94 2.24 7.2 0 10 0C12.8 0 15.06 2.24 15.06 5C15.06 7.76 12.8 10 10 10ZM3 18H17V16.67C17 14.92 14.69 13.11 10 13.11C5.31 13.11 3 14.92 3 16.67V18ZM10 11.11C16.66 11.11 19 14.44 19 16.67V20H1V16.67C1 14.44 3.34 11.11 10 11.11Z"
-      fill="black"
-      fill-opacity="0.26"
-    ></path></svg
-  ><svg
-    width="20"
-    height="20"
-    viewBox="0 0 20 20"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    class="w-5 h-5 absolute left-[1171px] top-[1187px]"
-    preserveAspectRatio="none"
-  >
-    <g clip-path="url(#clip0_0_1339)">
-      <path
-        d="M17.778 3.33301H2.22244C1.92775 3.33301 1.64514 3.45007 1.43676 3.65844C1.22839 3.86682 1.11133 4.14943 1.11133 4.44412V15.5552C1.11133 15.8499 1.22839 16.1325 1.43676 16.3409C1.64514 16.5493 1.92775 16.6663 2.22244 16.6663H17.778C18.0727 16.6663 18.3553 16.5493 18.5637 16.3409C18.772 16.1325 18.8891 15.8499 18.8891 15.5552V4.44412C18.8891 4.14943 18.772 3.86682 18.5637 3.65844C18.3553 3.45007 18.0727 3.33301 17.778 3.33301ZM16.9224 15.5552H3.14466L7.03355 11.533L6.23355 10.7608L2.22244 14.9108V5.28856L9.128 12.1608C9.33618 12.3677 9.61779 12.4839 9.91133 12.4839C10.2049 12.4839 10.4865 12.3677 10.6947 12.1608L17.778 5.11634V14.8386L13.6891 10.7497L12.9058 11.533L16.9224 15.5552ZM2.95022 4.44412H16.878L9.91133 11.3719L2.95022 4.44412Z"
-        fill="black"
-        fill-opacity="0.26"
-      ></path>
-    </g>
-    <defs>
-      <clipPath id="clip0_0_1339"><rect width="20" height="20" fill="white"></rect></clipPath>
-    </defs></svg
-  ><svg
-    width="20"
-    height="20"
-    viewBox="0 0 20 20"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    class="w-5 h-5 absolute left-[1171px] top-[1357px]"
-    preserveAspectRatio="none"
-  >
-    <path
-      d="M16.2501 18.125H16.1438C3.86259 17.4187 2.11884 7.05625 1.87509 3.89375C1.85545 3.64786 1.88452 3.40052 1.96064 3.16588C2.03676 2.93125 2.15842 2.71394 2.31867 2.52641C2.47891 2.33888 2.67458 2.1848 2.89448 2.07302C3.11437 1.96124 3.35415 1.89395 3.60009 1.875H7.04384C7.29419 1.87476 7.53885 1.94969 7.74611 2.0901C7.95338 2.23051 8.11372 2.42992 8.20634 2.6625L9.15634 5C9.24781 5.22722 9.27051 5.4763 9.22162 5.71631C9.17273 5.95631 9.05441 6.17667 8.88134 6.35L7.55009 7.69375C7.75804 8.87547 8.32396 9.96479 9.17128 10.8143C10.0186 11.6639 11.1064 12.2327 12.2876 12.4438L13.6438 11.1C13.8198 10.9288 14.0422 10.8133 14.2834 10.7677C14.5246 10.7221 14.7738 10.7486 15.0001 10.8438L17.3563 11.7875C17.5854 11.8831 17.7809 12.0446 17.9178 12.2517C18.0547 12.4587 18.1269 12.7018 18.1251 12.95V16.25C18.1251 16.7473 17.9276 17.2242 17.5759 17.5758C17.2243 17.9275 16.7474 18.125 16.2501 18.125ZM3.75009 3.125C3.58433 3.125 3.42536 3.19085 3.30815 3.30806C3.19094 3.42527 3.12509 3.58424 3.12509 3.75V3.8C3.41259 7.5 5.25634 16.25 16.2126 16.875C16.2947 16.8801 16.377 16.8689 16.4548 16.8421C16.5326 16.8153 16.6043 16.7734 16.6658 16.7188C16.7274 16.6642 16.7775 16.598 16.8135 16.524C16.8494 16.45 16.8703 16.3696 16.8751 16.2875V12.95L14.5188 12.0062L12.7251 13.7875L12.4251 13.75C6.98759 13.0688 6.25009 7.63125 6.25009 7.575L6.21259 7.275L7.98759 5.48125L7.05009 3.125H3.75009Z"
-      fill="black"
-      fill-opacity="0.26"
-    ></path></svg
-  ><svg
-    width="20"
-    height="20"
-    viewBox="0 0 20 20"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    class="w-5 h-5 absolute left-[1171px] top-[1527px]"
-    preserveAspectRatio="none"
-  >
-    <g clip-path="url(#clip0_0_1344)">
-      <path
-        d="M19.9989 10.6208C19.9837 10.1323 19.7774 9.66934 19.4244 9.33141L12.1706 2.26489C12.0618 2.15635 11.9326 2.07036 11.7905 2.01183C11.6484 1.95331 11.4961 1.9234 11.3425 1.92383H10.0479L18.5539 10.2285L18.5575 10.232C18.676 10.3444 18.7456 10.499 18.751 10.6623C18.7564 10.8256 18.6973 10.9845 18.5864 11.1045L12.477 17.8762L13.3346 18.7104L19.5095 11.9473C19.8404 11.5865 20.0162 11.11 19.9989 10.6208Z"
-        fill="black"
-        fill-opacity="0.26"
-      ></path>
-      <path
-        d="M16.6758 11.061C16.7354 10.8969 16.7479 10.7194 16.7118 10.5486C16.6756 10.3777 16.5924 10.2205 16.4714 10.0945C16.4673 10.0902 16.4636 10.0855 16.4595 10.0813L8.76199 2.25457L8.75832 2.2509C8.64252 2.13446 8.50477 2.04214 8.35304 1.9793C8.20132 1.91645 8.03864 1.88432 7.87441 1.88477H2.35133C1.89364 1.88529 1.45484 2.06733 1.1312 2.39097C0.807563 2.71461 0.625517 3.15341 0.625 3.6111V9.12282C0.625279 9.29309 0.660211 9.46152 0.727669 9.61786C0.795126 9.7742 0.893698 9.91517 1.01738 10.0322L9.23301 17.8525L9.23602 17.8554C9.40923 18.0191 9.63866 18.1101 9.87699 18.1096C9.88863 18.1096 9.90035 18.1094 9.91215 18.1089C10.0017 18.1057 10.0904 18.0897 10.1755 18.0614C10.3258 18.0113 10.4609 17.9237 10.5679 17.8068L16.4837 11.3763C16.568 11.285 16.6333 11.1778 16.6758 11.061ZM9.86328 16.7266L1.87801 9.12551L1.875 9.1227V3.6111C1.87514 3.48481 1.92538 3.36374 2.01467 3.27444C2.10397 3.18515 2.22504 3.13491 2.35133 3.13477H7.87438L15.3627 10.7488L9.86328 16.7266Z"
-        fill="black"
-        fill-opacity="0.26"
-      ></path>
-      <path
-        d="M5.46875 4.375C5.06701 4.375 4.67429 4.49413 4.34025 4.71733C4.00621 4.94052 3.74586 5.25776 3.59212 5.62892C3.43838 6.00009 3.39815 6.4085 3.47653 6.80253C3.55491 7.19655 3.74836 7.55849 4.03244 7.84256C4.31652 8.12664 4.67845 8.32009 5.07247 8.39847C5.4665 8.47685 5.87491 8.43662 6.24608 8.28288C6.61724 8.12914 6.93448 7.86879 7.15767 7.53475C7.38087 7.20071 7.5 6.80799 7.5 6.40625C7.49939 5.86772 7.28519 5.35141 6.90439 4.97061C6.52359 4.58981 6.00728 4.37561 5.46875 4.375ZM5.46875 7.1875C5.31423 7.1875 5.16319 7.14168 5.03471 7.05584C4.90624 6.96999 4.8061 6.84798 4.74697 6.70522C4.68784 6.56247 4.67237 6.40538 4.70251 6.25384C4.73266 6.10229 4.80706 5.96308 4.91632 5.85382C5.02558 5.74456 5.16479 5.67016 5.31634 5.64001C5.46788 5.60987 5.62497 5.62534 5.76772 5.68447C5.91048 5.7436 6.03249 5.84373 6.11834 5.97221C6.20418 6.10069 6.25 6.25173 6.25 6.40625C6.24976 6.61338 6.16738 6.81195 6.02092 6.95841C5.87445 7.10488 5.67588 7.18726 5.46875 7.1875Z"
-        fill="black"
-        fill-opacity="0.26"
-      ></path>
-    </g>
-    <defs>
-      <clipPath id="clip0_0_1344"><rect width="20" height="20" fill="white"></rect></clipPath>
-    </defs></svg
-  ><svg
-    width="20"
-    height="20"
-    viewBox="0 0 20 20"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    class="w-5 h-5 absolute left-[1171px] top-[1442px]"
-    preserveAspectRatio="none"
-  >
-    <g clip-path="url(#clip0_0_1348)">
-      <path
-        d="M8.05625 14.61V7.9425H7.265C6.6983 8.24459 6.15062 8.58105 5.625 8.95V9.81875C6.09375 9.4975 6.83625 9.04375 7.1975 8.8475H7.2125V14.61H8.05625ZM9.54125 12.9788C9.6 13.7788 10.2838 14.7362 11.67 14.7362C13.2425 14.7362 14.17 13.4038 14.17 11.1475C14.17 8.73 13.1937 7.8125 11.7287 7.8125C10.5712 7.8125 9.4825 8.6525 9.4825 10.0738C9.4825 11.5238 10.5125 12.2863 11.5775 12.2863C12.51 12.2863 13.115 11.8162 13.3062 11.2987H13.34C13.335 12.9437 12.7637 14.0037 11.7087 14.0037C10.8787 14.0037 10.4488 13.4413 10.3963 12.9788H9.54125ZM13.2325 10.0825C13.2325 10.9525 12.5338 11.5575 11.7525 11.5575C11.0012 11.5575 10.3225 11.0787 10.3225 10.0575C10.3225 9.02875 11.05 8.545 11.7825 8.545C12.5737 8.545 13.2325 9.0425 13.2325 10.0825Z"
-        fill="black"
-        fill-opacity="0.26"
-      ></path>
-      <path
-        d="M4.375 0C4.54076 0 4.69973 0.065848 4.81694 0.183058C4.93415 0.300269 5 0.45924 5 0.625V1.25H15V0.625C15 0.45924 15.0658 0.300269 15.1831 0.183058C15.3003 0.065848 15.4592 0 15.625 0C15.7908 0 15.9497 0.065848 16.0669 0.183058C16.1842 0.300269 16.25 0.45924 16.25 0.625V1.25H17.5C18.163 1.25 18.7989 1.51339 19.2678 1.98223C19.7366 2.45107 20 3.08696 20 3.75V17.5C20 18.163 19.7366 18.7989 19.2678 19.2678C18.7989 19.7366 18.163 20 17.5 20H2.5C1.83696 20 1.20107 19.7366 0.732233 19.2678C0.263392 18.7989 0 18.163 0 17.5V3.75C0 3.08696 0.263392 2.45107 0.732233 1.98223C1.20107 1.51339 1.83696 1.25 2.5 1.25H3.75V0.625C3.75 0.45924 3.81585 0.300269 3.93306 0.183058C4.05027 0.065848 4.20924 0 4.375 0V0ZM1.25 5V17.5C1.25 17.8315 1.3817 18.1495 1.61612 18.3839C1.85054 18.6183 2.16848 18.75 2.5 18.75H17.5C17.8315 18.75 18.1495 18.6183 18.3839 18.3839C18.6183 18.1495 18.75 17.8315 18.75 17.5V5H1.25Z"
-        fill="black"
-        fill-opacity="0.26"
-      ></path>
-    </g>
-    <defs>
-      <clipPath id="clip0_0_1348"><rect width="20" height="20" fill="white"></rect></clipPath>
-    </defs></svg
-  ><svg
-    width="20"
-    height="20"
-    viewBox="0 0 20 20"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    class="w-5 h-5 absolute left-[1171px] top-[1599px]"
-    preserveAspectRatio="none"
-  >
-    <path
-      d="M9.06261 10C9.06261 10.2486 9.16138 10.4871 9.3372 10.6629C9.51301 10.8387 9.75147 10.9375 10.0001 10.9375C10.2488 10.9375 10.4872 10.8387 10.663 10.6629C10.8388 10.4871 10.9376 10.2486 10.9376 10C10.9376 9.75136 10.8388 9.5129 10.663 9.33709C10.4872 9.16127 10.2488 9.0625 10.0001 9.0625C9.75147 9.0625 9.51301 9.16127 9.3372 9.33709C9.16138 9.5129 9.06261 9.75136 9.06261 10ZM12.9689 10C12.9689 10.2486 13.0676 10.4871 13.2434 10.6629C13.4193 10.8387 13.6577 10.9375 13.9064 10.9375C14.155 10.9375 14.3935 10.8387 14.5693 10.6629C14.7451 10.4871 14.8439 10.2486 14.8439 10C14.8439 9.75136 14.7451 9.5129 14.5693 9.33709C14.3935 9.16127 14.155 9.0625 13.9064 9.0625C13.6577 9.0625 13.4193 9.16127 13.2434 9.33709C13.0676 9.5129 12.9689 9.75136 12.9689 10ZM5.15636 10C5.15636 10.2486 5.25513 10.4871 5.43095 10.6629C5.60676 10.8387 5.84522 10.9375 6.09386 10.9375C6.3425 10.9375 6.58096 10.8387 6.75677 10.6629C6.93259 10.4871 7.03136 10.2486 7.03136 10C7.03136 9.75136 6.93259 9.5129 6.75677 9.33709C6.58096 9.16127 6.3425 9.0625 6.09386 9.0625C5.84522 9.0625 5.60676 9.16127 5.43095 9.33709C5.25513 9.5129 5.15636 9.75136 5.15636 10ZM18.0704 6.60938C17.629 5.56055 16.9962 4.61914 16.1896 3.81055C15.3886 3.00663 14.4377 2.36762 13.3907 1.92969C12.3165 1.47852 11.1759 1.25 10.0001 1.25H9.96105C8.77745 1.25586 7.63097 1.49023 6.55285 1.95117C5.51487 2.3936 4.57289 3.03374 3.77941 3.83594C2.98058 4.64258 2.35363 5.58008 1.92003 6.625C1.47081 7.70703 1.24425 8.85742 1.25011 10.041C1.25674 11.3974 1.57763 12.7338 2.18761 13.9453V16.9141C2.18761 17.1523 2.28227 17.3809 2.45076 17.5494C2.61925 17.7178 2.84777 17.8125 3.08605 17.8125H6.05675C7.26826 18.4225 8.60466 18.7434 9.96105 18.75H10.0021C11.172 18.75 12.3068 18.5234 13.3751 18.0801C14.4168 17.6474 15.3641 17.0158 16.1642 16.2207C16.9708 15.4219 17.6056 14.4883 18.0489 13.4473C18.5099 12.3691 18.7443 11.2227 18.7501 10.0391C18.756 8.84961 18.5255 7.69531 18.0704 6.60938ZM15.1193 15.1641C13.7501 16.5195 11.9337 17.2656 10.0001 17.2656H9.96691C8.78917 17.2598 7.61925 16.9668 6.58605 16.416L6.42199 16.3281H3.67199V13.5781L3.5841 13.4141C3.03331 12.3809 2.74035 11.2109 2.73449 10.0332C2.72667 8.08594 3.47081 6.25781 4.83605 4.88086C6.19933 3.50391 8.0216 2.74219 9.96886 2.73438H10.0021C10.9786 2.73438 11.9259 2.92383 12.8185 3.29883C13.6896 3.66406 14.4708 4.18945 15.1427 4.86133C15.8126 5.53125 16.34 6.31445 16.7052 7.18555C17.0841 8.08789 17.2735 9.04492 17.2696 10.0332C17.2579 11.9785 16.4943 13.8008 15.1193 15.1641Z"
-      fill="black"
-      fill-opacity="0.26"
-    ></path>
-  </svg>
+
+  <!-- Gallery Section -->
+  <div class="py-8">
+    <h2 class="text-[50px] font-bold text-[#181e4b] mb-8">From our gallery</h2>
+    <div *ngIf="tourImages && tourImages.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div *ngFor="let image of tourImages">
+        <img [src]="image" alt="Tour Image" class="w-full h-auto rounded-lg">
+      </div>
+    </div>
   </div>
-  <div class="w-[265.6px] h-[141px] absolute left-[276px] top-[679px] bg-white"></div>
-  <div class="w-[271px] h-[141px] absolute left-[538px] top-[679px] bg-[#f8f8f8]"></div>
-  <svg
-    width="267"
-    height="141"
-    viewBox="0 0 267 141"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    class="absolute left-[809px] top-[679px]"
-    preserveAspectRatio="none"
-  >
-    <path d="M0 0H267V141H0V0Z" fill="#F8F8F8"></path>
-  </svg>
-  <div class="w-[265.6px] h-[141px] absolute left-[1076px] top-[679px] bg-[#f8f8f8]"></div>
-  <div class="w-[265.6px] h-[141px] absolute left-[1341px] top-[679px] bg-[#f8f8f8]"></div>
-  <div class="w-[142px] h-[30px]">
-    <svg
-      width="22"
-      height="22"
-      viewBox="0 0 22 22"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-[21.67px] h-[21.67px]"
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M18.4167 2.16667H16.25V1.08333C16.25 0.796016 16.1359 0.520465 15.9327 0.317301C15.7295 0.114137 15.454 0 15.1667 0C14.8793 0 14.6038 0.114137 14.4006 0.317301C14.1975 0.520465 14.0833 0.796016 14.0833 1.08333V2.16667H7.58333V1.08333C7.58333 0.796016 7.4692 0.520465 7.26603 0.317301C7.06287 0.114137 6.78732 0 6.5 0C6.21268 0 5.93713 0.114137 5.73397 0.317301C5.5308 0.520465 5.41667 0.796016 5.41667 1.08333V2.16667H3.25C2.38805 2.16667 1.5614 2.50908 0.951903 3.11857C0.34241 3.72806 0 4.55471 0 5.41667V18.4167C0 19.2786 0.34241 20.1053 0.951903 20.7148C1.5614 21.3243 2.38805 21.6667 3.25 21.6667H18.4167C19.2786 21.6667 20.1053 21.3243 20.7148 20.7148C21.3243 20.1053 21.6667 19.2786 21.6667 18.4167V5.41667C21.6667 4.55471 21.3243 3.72806 20.7148 3.11857C20.1053 2.50908 19.2786 2.16667 18.4167 2.16667ZM19.5 18.4167C19.5 18.704 19.3859 18.9795 19.1827 19.1827C18.9795 19.3859 18.704 19.5 18.4167 19.5H3.25C2.96268 19.5 2.68713 19.3859 2.48397 19.1827C2.2808 18.9795 2.16667 18.704 2.16667 18.4167V10.8333H19.5V18.4167ZM19.5 8.66667H2.16667V5.41667C2.16667 5.12935 2.2808 4.8538 2.48397 4.65063C2.68713 4.44747 2.96268 4.33333 3.25 4.33333H5.41667V5.41667C5.41667 5.70398 5.5308 5.97953 5.73397 6.1827C5.93713 6.38586 6.21268 6.5 6.5 6.5C6.78732 6.5 7.06287 6.38586 7.26603 6.1827C7.4692 5.97953 7.58333 5.70398 7.58333 5.41667V4.33333H14.0833V5.41667C14.0833 5.70398 14.1975 5.97953 14.4006 6.1827C14.6038 6.38586 14.8793 6.5 15.1667 6.5C15.454 6.5 15.7295 6.38586 15.9327 6.1827C16.1359 5.97953 16.25 5.70398 16.25 5.41667V4.33333H18.4167C18.704 4.33333 18.9795 4.44747 19.1827 4.65063C19.3859 4.8538 19.5 5.12935 19.5 5.41667V8.66667Z"
-        fill="black"
-      ></path>
-    </svg>
-    <p
-      class="absolute left-[635px] top-[734px] text-xl font-bold text-left capitalize text-[#343434]"
-    >
-      Tour Plan
-    </p>
-  </div>
-  <div class="w-[127px] h-[30px]">
-    <svg
-      width="26"
-      height="26"
-      viewBox="0 0 26 26"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-[26px] h-[26px] absolute left-[1143px] top-[736px]"
-      preserveAspectRatio="xMidYMid meet"
-    >
-      <g clip-path="url(#clip0_123_725)">
-        <path
-          d="M23.1977 7.22266H2.80211C2.44201 7.22266 2.09665 7.36571 1.84202 7.62034C1.58739 7.87497 1.44434 8.22033 1.44434 8.58043V21.7538C1.44434 22.1139 1.58739 22.4592 1.84202 22.7139C2.09665 22.9685 2.44201 23.1115 2.80211 23.1115H23.1977C23.5578 23.1115 23.9031 22.9685 24.1578 22.7139C24.4124 22.4592 24.5554 22.1139 24.5554 21.7538V8.58043C24.5554 8.22033 24.4124 7.87497 24.1578 7.62034C23.9031 7.36571 23.5578 7.22266 23.1977 7.22266ZM23.111 21.6671H2.88878V8.6671H23.111V21.6671Z"
-          fill="black"
-        ></path>
-        <path
-          d="M6.18229 14.0472C6.61082 14.0472 7.02972 13.9201 7.38603 13.6821C7.74233 13.444 8.02004 13.1056 8.18403 12.7097C8.34802 12.3138 8.39093 11.8781 8.30733 11.4578C8.22372 11.0375 8.01737 10.6515 7.71436 10.3485C7.41134 10.0455 7.02528 9.8391 6.60499 9.7555C6.1847 9.6719 5.74905 9.71481 5.35314 9.8788C4.95724 10.0428 4.61885 10.3205 4.38077 10.6768C4.1427 11.0331 4.01562 11.452 4.01562 11.8805C4.01562 12.4552 4.2439 13.0063 4.65023 13.4126C5.05656 13.8189 5.60766 14.0472 6.18229 14.0472ZM6.18229 10.725C6.41198 10.7192 6.63817 10.7821 6.83196 10.9055C7.02576 11.029 7.17835 11.2074 7.27026 11.4179C7.36217 11.6285 7.38921 11.8617 7.34794 12.0877C7.30667 12.3138 7.19896 12.5224 7.03856 12.6869C6.87816 12.8514 6.67236 12.9643 6.44746 13.0113C6.22255 13.0583 5.98874 13.0372 5.7759 12.9506C5.56306 12.8641 5.38086 12.716 5.25256 12.5254C5.12426 12.3348 5.0557 12.1103 5.05563 11.8805C5.05553 11.579 5.1733 11.2894 5.3838 11.0735C5.5943 10.8576 5.88085 10.7325 6.18229 10.725Z"
-          fill="black"
-        ></path>
-        <path
-          d="M5.70539 20.222L10.0387 15.8886L12.3354 18.1853L10.2987 20.222H11.7432L17.1309 14.8342L21.6665 19.3336V17.8892L17.4776 13.722C17.3816 13.6267 17.2518 13.5732 17.1165 13.5732C16.9812 13.5732 16.8514 13.6267 16.7554 13.722L13.0287 17.4486L10.3782 14.8053C10.2821 14.71 10.1523 14.6566 10.0171 14.6566C9.88178 14.6566 9.75199 14.71 9.65595 14.8053L4.27539 20.222H5.70539Z"
-          fill="black"
-        ></path>
-        <path
-          d="M21.7679 2.16656C21.7679 1.97501 21.6918 1.79131 21.5564 1.65587C21.4209 1.52043 21.2372 1.44434 21.0457 1.44434H5.15679C4.96525 1.44434 4.78155 1.52043 4.6461 1.65587C4.51066 1.79131 4.43457 1.97501 4.43457 2.16656V2.88878H21.7679V2.16656Z"
-          fill="black"
-        ></path>
-        <path
-          d="M23.1978 5.05523C23.1978 4.86368 23.1217 4.67998 22.9863 4.54454C22.8508 4.4091 22.6671 4.33301 22.4756 4.33301H3.69781C3.50626 4.33301 3.32256 4.4091 3.18712 4.54454C3.05168 4.67998 2.97559 4.86368 2.97559 5.05523V5.77745H23.1978V5.05523Z"
-          fill="black"
-        ></path>
-      </g>
-      <defs>
-        <clipPath id="clip0_123_725"><rect width="26" height="26" fill="white"></rect></clipPath>
-      </defs>
-    </svg>
-    <p
-      class="absolute left-[1183px] top-[734px] text-xl font-bold text-left capitalize text-[#343434]"
-    >
-      Gallery
-    </p>
-  </div>
-  <div class="w-[138.67px] h-[30px]">
-    <svg
-      width="9"
-      height="10"
-      viewBox="0 0 9 10"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      class="absolute left-[879.42px] top-[743.58px]"
-      preserveAspectRatio="none"
-    >
-      <path
-        d="M4.66699 8.08398C6.46192 8.08398 7.91699 6.62891 7.91699 4.83398C7.91699 3.03906 6.46192 1.58398 4.66699 1.58398C2.87207 1.58398 1.41699 3.03906 1.41699 4.83398C1.41699 6.62891 2.87207 8.08398 4.66699 8.08398Z"
-        stroke="#111111"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      ></path></svg
-    ><svg
-    width="20"
-    height="24"
-    viewBox="0 0 20 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    class="absolute left-[874px] top-[738.17px]"
-    preserveAspectRatio="none"
-  >
-    <path
-      d="M9.66667 1.16699C7.36812 1.16699 5.16372 2.08008 3.53841 3.7054C1.91309 5.33072 1 7.53512 1 9.83366C1 11.8833 1.4355 13.2245 2.625 14.7087L9.66667 22.8337L16.7083 14.7087C17.8978 13.2245 18.3333 11.8833 18.3333 9.83366C18.3333 7.53512 17.4202 5.33072 15.7949 3.7054C14.1696 2.08008 11.9652 1.16699 9.66667 1.16699V1.16699Z"
-      stroke="#111111"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    ></path>
-  </svg>
-    <p
-      class="absolute left-[910.67px] top-[735px] text-xl font-bold text-left capitalize text-[#343434]"
-    >
-      Location
-    </p>
-  </div>
-  <p
-    class="absolute left-[1424px] top-[735px] text-xl font-bold text-left capitalize text-[#343434]"
-  >
-    Compare
-  </p>
-  <div class="w-[183px] h-[30px]">
-    <p
-      class="absolute left-[364px] top-[737px] text-xl font-bold text-left capitalize text-[#343434]"
-    >
-      Information
-    </p>
-    <svg
-      width="26"
-      height="26"
-      viewBox="0 0 26 26"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-[26px] h-[26px] absolute left-[324px] top-[739px]"
-      preserveAspectRatio="none"
-    >
-      <g clip-path="url(#clip0_123_740)">
-        <path
-          d="M13 24.375C9.98316 24.375 7.08989 23.1766 4.95666 21.0433C2.82343 18.9101 1.625 16.0168 1.625 13C1.625 9.98316 2.82343 7.08989 4.95666 4.95666C7.08989 2.82343 9.98316 1.625 13 1.625C16.0168 1.625 18.9101 2.82343 21.0433 4.95666C23.1766 7.08989 24.375 9.98316 24.375 13C24.375 16.0168 23.1766 18.9101 21.0433 21.0433C18.9101 23.1766 16.0168 24.375 13 24.375ZM13 26C16.4478 26 19.7544 24.6304 22.1924 22.1924C24.6304 19.7544 26 16.4478 26 13C26 9.55219 24.6304 6.24558 22.1924 3.80761C19.7544 1.36964 16.4478 0 13 0C9.55219 0 6.24558 1.36964 3.80761 3.80761C1.36964 6.24558 0 9.55219 0 13C0 16.4478 1.36964 19.7544 3.80761 22.1924C6.24558 24.6304 9.55219 26 13 26Z"
-          fill="black"
-        ></path>
-        <path
-          d="M14.5112 10.7055L10.7899 11.1719L10.6567 11.7894L11.3879 11.9242C11.8657 12.038 11.9599 12.2102 11.8559 12.6864L10.6567 18.3219C10.3414 19.7795 10.8273 20.4652 11.9697 20.4652C12.8553 20.4652 13.8839 20.0557 14.3503 19.4935L14.4933 18.8175C14.1683 19.1035 13.6938 19.2172 13.3785 19.2172C12.9317 19.2172 12.7692 18.9036 12.8845 18.3511L14.5112 10.7055ZM14.6249 7.3125C14.6249 7.74348 14.4537 8.1568 14.149 8.46155C13.8442 8.76629 13.4309 8.9375 12.9999 8.9375C12.5689 8.9375 12.1556 8.76629 11.8509 8.46155C11.5461 8.1568 11.3749 7.74348 11.3749 7.3125C11.3749 6.88152 11.5461 6.4682 11.8509 6.16345C12.1556 5.8587 12.5689 5.6875 12.9999 5.6875C13.4309 5.6875 13.8442 5.8587 14.149 6.16345C14.4537 6.4682 14.6249 6.88152 14.6249 7.3125Z"
-          fill="black"
-        ></path>
-      </g>
-      <defs>
-        <clipPath id="clip0_123_740"><rect width="26" height="26" fill="white"></rect></clipPath>
-      </defs>
-    </svg>
-  </div>
-  <svg
-    width="20"
-    height="20"
-    viewBox="0 0 20 20"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    class="absolute left-[1396px] top-[738px]"
-    preserveAspectRatio="none"
-  >
-    <path
-      d="M19.9258 4.36883V5.36883C19.9258 5.63405 19.8204 5.8884 19.6329 6.07594C19.4454 6.26347 19.191 6.36883 18.9258 6.36883H14.4258C14.2932 6.36883 14.166 6.42151 14.0722 6.51528C13.9785 6.60904 13.9258 6.73622 13.9258 6.86883V8.93743C13.9258 9.09568 13.8789 9.25038 13.791 9.38197C13.7031 9.51355 13.5781 9.61611 13.4319 9.67667C13.2857 9.73723 13.1248 9.75306 12.9696 9.72217C12.8144 9.69128 12.6719 9.61505 12.56 9.50313L8.4914 5.43453C8.41711 5.36024 8.35818 5.27205 8.31797 5.17499C8.27777 5.07792 8.25707 4.97389 8.25707 4.86883C8.25707 4.76377 8.27777 4.65974 8.31797 4.56267C8.35818 4.46561 8.41711 4.37742 8.4914 4.30313L12.56 0.23443C12.6719 0.122501 12.8144 0.0462718 12.9697 0.0153847C13.1249 -0.0155025 13.2858 0.000340536 13.432 0.0609095C13.5782 0.121479 13.7031 0.224052 13.791 0.355653C13.879 0.487255 13.9258 0.641971 13.9258 0.80023V2.86883C13.9258 3.00144 13.9785 3.12861 14.0722 3.22238C14.166 3.31615 14.2932 3.36883 14.4258 3.36883H18.9258C19.191 3.36883 19.4454 3.47419 19.6329 3.66172C19.8204 3.84926 19.9258 4.10361 19.9258 4.36883ZM7.3658 10.4199C7.25392 10.308 7.11137 10.2318 6.95616 10.2009C6.80095 10.17 6.64007 10.1858 6.49387 10.2464C6.34766 10.3069 6.2227 10.4095 6.13479 10.5411C6.04688 10.6727 5.99997 10.8274 6 10.9856V13.0542C6 13.1868 5.94732 13.314 5.85355 13.4078C5.75979 13.5016 5.63261 13.5542 5.5 13.5542H1C0.734784 13.5542 0.48043 13.6596 0.292893 13.8471C0.105357 14.0347 0 14.289 0 14.5542V15.5542C0 15.8194 0.105357 16.0738 0.292893 16.2613C0.48043 16.4489 0.734784 16.5542 1 16.5542H5.5C5.63261 16.5542 5.75979 16.6069 5.85355 16.7007C5.94732 16.7944 6 16.9216 6 17.0542V19.1228C5.99995 19.2811 6.04685 19.4358 6.13475 19.5674C6.22265 19.699 6.34761 19.8016 6.49382 19.8621C6.64003 19.9227 6.80092 19.9386 6.95614 19.9077C7.11135 19.8768 7.25392 19.8006 7.3658 19.6886L11.4344 15.6199C11.5087 15.5456 11.5676 15.4574 11.6078 15.3604C11.648 15.2633 11.6687 15.1593 11.6687 15.0542C11.6687 14.9492 11.648 14.8451 11.6078 14.7481C11.5676 14.651 11.5087 14.5628 11.4344 14.4885L7.3658 10.4199Z"
-      fill="black"
-    ></path>
-  </svg>
 </div>
