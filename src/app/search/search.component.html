@@ -1,0 +1,25 @@
+<div class="text-center justify-center items-center">
+<div class="p-4 ">
+  <input type="text" [(ngModel)]="query" placeholder="Search by name" class=" w-80 border p-2 rounded" />
+  <button (click)="performSearch()" class="bg-blue-500 text-white p-2  rounded ml-2">Search</button>
+</div>
+
+<div *ngIf="searchResults.length > 0" class="px-20 bg-white ">
+  <h3 class="text-lg font-bold">Search Results:</h3>
+  <ul class="list-disc pl-5">
+    <div *ngFor="let result of searchResults" class="mt-1 text-center  py-2 justify-center">
+      <div class="flex">
+      <img [src]=result.image class="h-20 px-5 rounded-2xl">
+        <div class="">
+      <h3 class="text-xl font-semibold px-10">{{ result.name }} - {{ result.price }}</h3>
+        <p>{{result.description2}}</p>
+          <button>View Details</button>
+        </div>
+      </div>
+
+      </div>
+  </ul>
+</div>
+
+
+</div>

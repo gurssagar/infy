@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NgForOf} from "@angular/common";
 import {RouterLink, RouterOutlet} from "@angular/router";
+import {SearchComponent} from "../search/search.component";
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,8 @@ import {RouterLink, RouterOutlet} from "@angular/router";
   imports: [
     NgForOf,
     RouterOutlet,
-    RouterLink
+    RouterLink,
+    SearchComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

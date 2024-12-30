@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import {KeyValuePipe, NgForOf, NgIf} from "@angular/common";
 import {ActivatedRoute, RouterLink} from "@angular/router";
-import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-tour-plan',
@@ -175,8 +174,6 @@ export class TourPlanComponent {
     return tour ? tour.tourPlans : null;
   }
 
-  currentTour: any;
-  safeSrc: SafeResourceUrl;
 
 
   tourDescription: string | undefined;

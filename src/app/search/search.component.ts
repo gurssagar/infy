@@ -1,28 +1,29 @@
-import {Component, Inject, PLATFORM_ID} from '@angular/core';
-import {ActivatedRoute, RouterLink} from "@angular/router";
-import * as L from 'leaflet';
-import {isPlatformBrowser, NgForOf, NgIf} from '@angular/common';
-import {MapComponent} from "../map/map.component";
+import { Component } from '@angular/core';
+import * as JsSearch from 'js-search';
+import {FormsModule} from "@angular/forms";
+import {NgForOf, NgIf} from "@angular/common";
 
-// @ts-ignore
 @Component({
-  selector: 'app-location',
+  selector: 'app-search',
   standalone: true,
   imports: [
-    RouterLink,
-    MapComponent,
+    FormsModule,
     NgForOf,
-    NgIf,
+    NgIf
   ],
-  templateUrl: './location.component.html',
-  styleUrl: './location.component.css'
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.css']
 })
-
-export class LocationComponent {
+export class SearchComponent {
+  data = [
+    { id: 1, name: 'Paris Explorer', email: 'john@example.com' },
+    { id: 2, name: 'Tokyo Adventure', email: 'jane@example.com' },
+    { id: 3, name: 'Rome Classic', email: 'alice@example.com' }
+  ];
 
   tours = [
     {
-      id: 'a1b2c3d4',
+      id: 1,
       name: 'Paris Explorer',
       price: 1299,
       duration: '7 days',
@@ -63,9 +64,9 @@ export class LocationComponent {
     },
     {
       center: {
-        latitude:35.41,
-        longitude: 139.46},
-      id: 'e5f6g7h8',
+        latitude:77.61648476788898,
+        longitude:12.931423492103944},
+      id: 2,
       name: 'Tokyo Adventure',
       price: 2499,
       duration: '10 days',
@@ -95,9 +96,9 @@ export class LocationComponent {
 
     {
       center: {
-        latitude:41.54,
-        longitude:12.29},
-      id: 'i9j0k1l2',
+        latitude:35.41,
+        longitude: 139.46},
+      id: 3,
       name: 'Rome Classic',
       price: 1599,
       duration: '8 days',
@@ -105,8 +106,8 @@ export class LocationComponent {
       description2: 'Discover the timeless beauty of Rome',
       image: 'https://www.turismoroma.it/sites/default/files/Roma%20in%20breve.jpg',
       images: [
-      'https://plus.unsplash.com/premium_photo-1675975706513-9daba0ec12a8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm9tZXxlbnwwfHwwfHx8MA%3D%3D',
-      'https://images.unsplash.com/photo-1529154036614-a60975f5c760?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9tZXxlbnwwfHwwfHx8MA%3D%3D',
+        'https://plus.unsplash.com/premium_photo-1675975706513-9daba0ec12a8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm9tZXxlbnwwfHwwfHx8MA%3D%3D',
+        'https://images.unsplash.com/photo-1529154036614-a60975f5c760?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9tZXxlbnwwfHwwfHx8MA%3D%3D',
         'https://cdn-imgix.headout.com/microbrands-banner-image/image/73648cebac314a43970ed9e6de097aaf-AdobeStock_40207802.jpeg'
       ],
       src:"https://maps.google.com/maps?q=Rome&output=embed",
@@ -130,9 +131,9 @@ export class LocationComponent {
     },
     {
       center: {
-        latitude:40.42,
-        longitude:74.0},
-      id: 'm3n4o5p6',
+        latitude:77.61648476788898,
+        longitude:12.931423492103944},
+      id: 4,
       name: 'New York City Lights',
       price: 1999,
       duration: '5 days',
@@ -164,9 +165,9 @@ export class LocationComponent {
     },
     {
       center: {
-        latitude:33.52,
-        longitude:151.12},
-      id: 'q7r8s9t0',
+        latitude:77.61648476788898,
+        longitude:12.931423492103944},
+      id: 5,
       name: 'Sydney Escape',
       price: 2199,
       duration: '6 days',
@@ -192,159 +193,19 @@ export class LocationComponent {
     }
     // Add similar structures for other tours
   ];
-  getTourPlansById(tourId: string) {
-    const tour = this.tours.find(t => t.id === tourId);
-    return tour ? tour.tourPlans : null;
+
+  searchResults: any[] = [];
+  query: string = '';
+  search: any;
+
+  constructor() {
+    this.search = new JsSearch.Search('id');
+    this.search.addIndex('name');
+    this.search.addIndex('price')
+    this.search.addDocuments(this.tours);
   }
 
-
-  tourDescription: string | undefined;
-  tourName: string | undefined;
-  tourPrice: number | undefined;
-  tourDuration: string | undefined;
-  tourImages: string[] | undefined;
-  tourDestination: string | undefined;
-  tourDeparture: string | undefined;
-  tourDepartureTime: string | undefined;
-  tourReturnTime: string | undefined;
-  tourDressCode: string | undefined;
-  protected tourId: any;
-  tourmap:string | undefined;
-  constructor(private route: ActivatedRoute) {}
-  selectedTour:{
-    departureTime: string;
-    image: string;
-    src: string;
-    center: { latitude: number; longitude: number };
-    destination: string;
-    description: string;
-    description2: string;
-    dressCode: string;
-    returnTime: string;
-    duration: string;
-    tourPlans: { day6: string; day7: string; day4: string; day5: string; day2: string; day3: string; day1: string };
-    price: number;
-    name: string;
-    id: string;
-    departure: string
-  } | {
-    departureTime: string;
-    image: string;
-    images: string[];
-    src: string;
-    center: { latitude: number; longitude: number };
-    destination: string;
-    description: string;
-    description2: string;
-    dressCode: string;
-    returnTime: string;
-    duration: string;
-    tourPlans: { day2: string; day3: string; day1: string };
-    price: number;
-    name: string;
-    id: string;
-    departure: string
-  } | {
-    departureTime: string;
-    image: string;
-    images: string[];
-    src: string;
-    center: { latitude: number; longitude: number };
-    destination: string;
-    description: string;
-    description2: string;
-    dressCode: string;
-    returnTime: string;
-    duration: string;
-    tourPlans: { day4: string; day2: string; day3: string; day1: string };
-    price: number;
-    name: string;
-    id: string;
-    departure: string
-  } | {
-    departureTime: string;
-    image: string;
-    images: string[];
-    src: string;
-    center: { latitude: number; longitude: number };
-    destination: string;
-    description: string;
-    description2: string;
-    dressCode: string;
-    returnTime: string;
-    duration: string;
-    tourPlans: { day4: string; day2: string; day3: string; day1: string };
-    price: number;
-    name: string;
-    id: string;
-    departure: string
-  } | {
-    departureTime: string;
-    image: string;
-    images: string[];
-    src: string;
-    center: { latitude: number; longitude: number };
-    destination: string;
-    description: string;
-    description2: string;
-    dressCode: string;
-    returnTime: string;
-    duration: string;
-    tourPlans: { day2: string; day3: string; day1: string };
-    price: number;
-    name: string;
-    id: string;
-    departure: string
-  } | undefined;
-
-  ngAfterViewInit() {
-    this.tours.forEach(tour => {
-      this.initMap(tour.id, tour.center.latitude, tour.center.longitude);
-    });
+  performSearch() {
+    this.searchResults = this.search.search(this.query);
   }
-  private initMap(tourId: string, latitude: number, longitude: number): void {
-    const mapElement = document.getElementById(`map-${tourId}`);
-    if (mapElement) {
-      const iframe = document.createElement('iframe');
-      iframe.src = `https://www.google.com/maps/embed/v1/view?key=AIzaSyDKeBh5wqhqQx2fw5H1y8dXseuvyJVL7G4&center=${latitude},${longitude}&zoom=14`;
-      iframe.width = "100%";
-      iframe.height = "300";
-      iframe.style.border = "0";
-      mapElement.appendChild(iframe);
-    }
-  }
-
-  ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      const id = params.get('id');
-      this.selectedTour = this.tours.find(tour => tour.id === id);
-    });
-      this.route.paramMap.subscribe(params => {
-      const tourId = params.get('id');
-      this.route.params.subscribe(params => {
-        this.tourId = params['id'];
-      });
-      if (tourId) {
-        const tour = this.tours.find(t => t.id === tourId);
-        if (tour) {
-
-          this.tourDescription = tour.description;
-          this.tourName = tour.name;
-          this.tourPrice = tour.price;
-          this.tourDuration = tour.duration;
-          this.tourImages = tour.images;
-          this.tourDestination = tour.destination;
-          this.tourDeparture = tour.departure;
-          this.tourDepartureTime = tour.departureTime;
-          this.tourReturnTime = tour.returnTime;
-          this.tourDressCode = tour.dressCode;
-          this.tourmap=tour.src;
-        } else {
-          this.tourDescription = 'Description not found';
-        }
-      }
-    });
-  }
-
-
 }
