@@ -214,6 +214,7 @@ export class LocationComponent {
   selectedTour:{
     departureTime: string;
     image: string;
+    images: string[];
     src: string;
     center: { latitude: number; longitude: number };
     destination: string;
