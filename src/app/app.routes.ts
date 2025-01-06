@@ -5,7 +5,7 @@ import {GalleryComponent} from "./gallery/gallery.component";
 import {CompareComponent} from "./compare/compare.component";
 import {LocationComponent} from "./location/location.component";
 import {HomeComponent} from "./home/home.component";
-
+import {AddtoursComponent} from "./addtours/addtours.component"
 export const routes: Routes = [{
   path: "info/:id",
   component: InfoComponent
@@ -29,5 +29,9 @@ export const routes: Routes = [{
   {
     path: "home",
     component: HomeComponent
+  },
+  {
+    path:"addtours",
+    component:AddtoursComponent,
   }
 ];

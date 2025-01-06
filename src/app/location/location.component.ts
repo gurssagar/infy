@@ -105,8 +105,8 @@ export class LocationComponent {
       description2: 'Discover the timeless beauty of Rome',
       image: 'https://www.turismoroma.it/sites/default/files/Roma%20in%20breve.jpg',
       images: [
-      'https://plus.unsplash.com/premium_photo-1675975706513-9daba0ec12a8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm9tZXxlbnwwfHwwfHx8MA%3D%3D',
-      'https://images.unsplash.com/photo-1529154036614-a60975f5c760?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9tZXxlbnwwfHwwfHx8MA%3D%3D',
+        'https://plus.unsplash.com/premium_photo-1675975706513-9daba0ec12a8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm9tZXxlbnwwfHwwfHx8MA%3D%3D',
+        'https://images.unsplash.com/photo-1529154036614-a60975f5c760?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cm9tZXxlbnwwfHwwfHx8MA%3D%3D',
         'https://cdn-imgix.headout.com/microbrands-banner-image/image/73648cebac314a43970ed9e6de097aaf-AdobeStock_40207802.jpeg'
       ],
       src:"https://maps.google.com/maps?q=Rome&output=embed",
@@ -320,7 +320,7 @@ export class LocationComponent {
       const id = params.get('id');
       this.selectedTour = this.tours.find(tour => tour.id === id);
     });
-      this.route.paramMap.subscribe(params => {
+    this.route.paramMap.subscribe(params => {
       const tourId = params.get('id');
       this.route.params.subscribe(params => {
         this.tourId = params['id'];

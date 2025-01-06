@@ -29,7 +29,7 @@
           <h2 class="text-2xl font-bold text-[#353a61]">Tour Plan</h2>
         </div>
         <div *ngIf="tourId">
-          <div *ngFor="let day of getTourPlansById(tourId) | keyvalue">
+          <div *ngFor="let day of tourPlans | keyvalue">
             <div class="grid grid-cols-2">
             <h3 class="py-4 capitalize text-orange-500 text-2xl">{{day.key}}</h3>
             <h3 class="py-4 font-semibold text-lg ">{{ day.value }}</h3>
