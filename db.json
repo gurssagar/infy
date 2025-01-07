@@ -663,9 +663,29 @@
           "latitude": 48.8575,
           "longitude": 2.3514
         }
+      },
+      {
+        "id": "ab12",
+        "name": "Bangalore",
+        "price": 1500,
+        "duration": "2",
+        "description": "v",
+        "description2": "s",
+        "image": "",
+        "images": "",
+        "destination": "",
+        "departure": "",
+        "departureTime": "",
+        "returnTime": "",
+        "dressCode": "",
+        "day1": "",
+        "day2": "",
+        "day3": "",
+        "day4": "",
+        "day5": "",
+        "day6": "",
+        "day7": ""
       }
     ]
   }
 ]
-
-

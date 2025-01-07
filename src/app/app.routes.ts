@@ -27,7 +27,7 @@ export const routes: Routes = [{
     component: CompareComponent
   },
   {
-    path: "home",
+    path: "",
     component: HomeComponent
   },
   {
