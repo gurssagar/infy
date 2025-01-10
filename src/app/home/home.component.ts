@@ -5,6 +5,8 @@ import {SearchComponent} from "../search/search.component";
 import {TourService} from "../tour.service";
 import {MatPaginatorModule, PageEvent} from "@angular/material/paginator";
 import {NgxPaginationModule} from 'ngx-pagination';
+import {MenuComponent} from "../menu/menu.component";
+
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -14,7 +16,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     RouterLink,
     SearchComponent,
     MatPaginatorModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MenuComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

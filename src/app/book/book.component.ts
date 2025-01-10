@@ -125,7 +125,7 @@ export class BookComponent implements OnInit {
       bookingId:bookingId,
     }
     this.updateExistingBooking(bookingId, newBooking);
-    this.UpdateUserBooking(this.bookingForm.value.email,bookId);
+    this.UpdateUserBooking(this.bookingForm.value.phone,bookId);
     console.log(bookId);
     console.log(this.bookingForm.value.email);
   }
@@ -134,30 +134,30 @@ export class BookComponent implements OnInit {
   /**
    * Update an existing booking in user or add a new one if it doesn't exist.
    */
-  UpdateUserBooking(email: string, booking: any): void {
+  UpdateUserBooking(phone: string, booking: any): void {
     this.tourService.getUserBookings().subscribe(
       (UserBookings: any) => {
         let updatedBookings;
 
-        if (UserBookings[email]) {
+        if (UserBookings[phone]) {
           // If email exists, append the new booking to existing records
-          const existingBookings = Array.isArray(UserBookings[email])
-            ? UserBookings[email]
-            : [UserBookings[email]];
+          const existingBookings = Array.isArray(UserBookings[phone])
+            ? UserBookings[phone]
+            : [UserBookings[phone]];
 
           updatedBookings = {
             ...UserBookings,
-            [email]: [...existingBookings, booking]
+            [phone]: [...existingBookings, booking]
           };
         } else {
           // If email doesn't exist, create new record
           updatedBookings = {
             ...UserBookings,
-            [email]: [booking]
+            [phone]: [booking]
           };
         }
 
-        this.tourService.addBookingToUser(email, updatedBookings).subscribe(
+        this.tourService.addBookingToUser(phone, updatedBookings).subscribe(
           response => {
             console.log('User booking added successfully', response);
             alert('Booking confirmed!');
