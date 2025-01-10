@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, RouterLink} from '@angular/router';
 import {NgForOf, NgIf} from "@angular/common";
 import {TourService} from "../tour.service";
+import {BookComponent} from "../book/book.component";
 
 @Component({
   selector: 'app-info',
@@ -9,13 +10,31 @@ import {TourService} from "../tour.service";
   imports: [
     NgForOf,
     NgIf,
-    RouterLink
+    RouterLink,
+    BookComponent,
+
+
+
   ],
   templateUrl: './info.component.html',
   styleUrl: './info.component.css'
 })
 export class InfoComponent implements OnInit {
-  message = 'Initial Message';
+  currentImageIndex = 0;
+
+  nextImage() {
+    if (this.tourImages) {
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.tourImages.length;
+    }
+  }
+
+  previousImage() {
+    if (this.tourImages) {
+      this.currentImageIndex = this.currentImageIndex === 0 ?
+        (this.tourImages.length - 1) : (this.currentImageIndex - 1);
+    }
+  }
+
 
   tours: any[] = [];
   constructor(private tourService: TourService,private route: ActivatedRoute) {}
@@ -31,6 +50,7 @@ export class InfoComponent implements OnInit {
   tourDepartureTime: string | undefined;
   tourReturnTime: string | undefined;
   tourDressCode: string | undefined;
+  tourDescription2: string | undefined;
   protected tourId: any;
 
 
@@ -45,7 +65,6 @@ export class InfoComponent implements OnInit {
         });
         if (tourId) {
           const tour = this.tours.find(t => t.id == tourId);
-          console.log(this.tours);
           if (tour) {
 
             this.tourDescription = tour.description;
@@ -59,6 +78,7 @@ export class InfoComponent implements OnInit {
             this.tourDepartureTime = tour.departureTime;
             this.tourReturnTime = tour.returnTime;
             this.tourDressCode = tour.dressCode;
+            this.tourDescription2 = tour.description2;
           } else {
             this.tourDescription = 'Description not found';
           }

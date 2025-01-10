@@ -1,0 +1,14 @@
+<div>
+  <section id="information"><app-info></app-info></section>
+
+  <nav class="bg-white border border-gray-300 w-full mx-auto p-4">
+    <ul class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 sm:justify-center">
+      <li><a href="/tours/{{tourId}}/#tour-plan" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Tour Plan</a></li>
+      <li><a href="/tours/{{tourId}}#location" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Location</a></li>
+      <li><a href="/tours/{{tourId}}#gallery" class="block text-center px-4 py-2 text-gray-700 hover:bg-gray-100 rounded">Gallery</a></li>
+    </ul>
+  </nav>
+  <section id="tour-plan"><app-tour-plan></app-tour-plan></section>
+  <section id="gallery"><app-gallery></app-gallery></section>
+  <section id="location"><app-location></app-location></section>
+</div>

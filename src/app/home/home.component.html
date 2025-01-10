@@ -1,40 +1,34 @@
-<div class="bg-[#ffffff] flex flex-row justify-center w-full">
-  <div class="bg-[#ffffff] overflow-hidden w-full max-w-[1920px]">
+<div class="bg-[#ffffff] flex flex-row justify-center ">
+  <div class="bg-[#ffffff] overflow-hidden w-full ">
     <!-- Hero Section -->
-    <div class="relative w-full ">
-      <div class="relative w-full ">
-        <div class=" w-full h-[800px] bg-[url('/assets/top.jpg')] z-10">
+    <div class="  ">
+      <div class="  ">
+        <div class="bg-cover w-screen h-[800px] bg-[url('/assets/top.jpg')] z-10">
 
-          <div class="pt-40 font-bold text-[#ffefeb] text-base md:text-lg tracking-[1.80px] text-center">
-            SEARCH TOUR
-          </div>
 
-          <div class=" font-normal text-white text-4xl md:text-6xl lg:text-[157.4px] text-center leading-tight">
+
+          <div class=" font-normal pt-48 text-white text-4xl md:text-6xl lg:text-[157.4px] text-center leading-tight">
             Our Packages
           </div>
           <app-search></app-search>
         </div>
       </div>
-
-      <!-- Search & Filter Section -->
-      <div class="w-full px-4 md:px-8 lg:px-[277px] -mt-16 ">
-        <div class="flex flex-col md:flex-row gap-4">
-          <!-- Date Filter -->
-          <div class=" z-20 w-full md:w-1/4 h-[80px] md:h-[141px] bg-[#f7f7f7] flex items-center justify-center">
-            <span class="font-bold text-[#343434] text-lg md:text-xl tracking-[2.00px]">Date</span>
+        <div class="flex justify-evenly z-20 px-72 w-full text-right  items-center   ">
+          <div class="w-1/2 text-left font-bold text-4xl mt-8 md:mt-16 items-center">
+            Packages
+          </div>
+          <div class="w-1/2 mt-8 md:mt-16">
+            <select  class=" items-center mt-10 font-bold text-[#343434] border-2 text-lg md:text-xl tracking-[2.00px]">
+              <option value="" disabled selected>Sort By</option>
+              <option value="date">Date</option>
+              <option value="priceLow">Price Low To High</option>
+              <option value="priceHigh">Price High To Low</option>
+              <option value="name">Name (A-Z)</option>
+            </select>
           </div>
 
-          <!-- Price Filters -->
-          <div (click)="sortByPrice('low')" class="z-20 w-full md:w-1/4 h-[80px] md:h-[141px] bg-[#f7f7f7] flex items-center justify-center cursor-pointer">
-            <span class="font-bold text-[#343434] text-lg md:text-xl tracking-[2.00px]">Price Low To High</span>
-          </div>
-          <div (click)="sortByPrice('high')" class="z-20 w-full md:w-1/4 h-[80px] md:h-[141px] bg-[#f7f7f7] flex items-center justify-center cursor-pointer">
-            <span class="font-bold text-[#343434] text-lg md:text-xl tracking-[2.00px]">Price High To Low</span>
-          </div>
-          <div (click)="sortByName()" class="z-20 w-full md:w-1/4 h-[80px] md:h-[141px] bg-[#f7f7f7] flex items-center justify-center cursor-pointer">
-            <span class="font-bold text-[#343434] text-lg md:text-xl tracking-[2.00px]">Name(A-Z)</span>
-          </div>        </div>
-      </div>
+        </div>
+
 
       <!-- Tour Cards -->
       <div class="w-full px-4 md:px-8 lg:px-[277px] mt-8 md:mt-16">
@@ -43,21 +37,27 @@
               <div>
                 <img [src]="tour.image" class="w-full h-48 md:h-64 object-cover rounded-t-[21px]" [alt]="tour.name"/>
                 <div class="p-4 md:p-6">
-                  <h3 class="text-2xl md:text-[31.6px] font-bold text-[#181e4b]">{{tour.name}}</h3>
+                  <h3 class="text-2xl  font-bold text-[#181e4b]">{{tour.name}}</h3>
                   <p class="pt-4 text-sm md:text-base text-[#181e4b]">{{tour.description2}}</p>
 
                   <div class="flex justify-between items-center mt-4">
-                    <span class="text-sm md:text-base ">$ {{tour.price}}</span>
-                    <button class="bg-black text-white px-3 py-2" [routerLink]="['/info', tour.id]">View Details</button>
+                    <span class="text-sm md:text-base ">₹ {{tour.price}}</span>
+                    <button class="bg-black text-white px-3 py-2" [routerLink]="['/tours', tour.id]">View Details</button>
                   </div>
                 </div>
               </div>
           </div>
 
-          <mat-paginator [length]=totalItems [pageSize]=pageSize [pageIndex]=currentPage (page)=pageChanged($event)></mat-paginator>
+
 
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="  justify-center items-center">
+  <div class="my-10   justify-center items-center text-center">
+    <mat-paginator [length]="totalItems" class="bg-white text-black justify-center text-center" [pageSize]="pageSize" [pageIndex]="currentPage" (page)="pageChanged($event)"></mat-paginator>
+
   </div>
 </div>

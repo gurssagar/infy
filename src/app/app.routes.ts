@@ -6,6 +6,9 @@ import {CompareComponent} from "./compare/compare.component";
 import {LocationComponent} from "./location/location.component";
 import {HomeComponent} from "./home/home.component";
 import {AddtoursComponent} from "./addtours/addtours.component"
+import {ToursComponent} from "./tours/tours.component";
+import {BookComponent} from "./book/book.component";
+import {ManageBookingComponent} from "./manage-booking/manage-booking.component";
 export const routes: Routes = [{
   path: "info/:id",
   component: InfoComponent
@@ -33,5 +36,17 @@ export const routes: Routes = [{
   {
     path:"addtours",
     component:AddtoursComponent,
+  },
+  {
+    path:"tours/:id",
+    component:ToursComponent,
+  },
+  {
+    path:"booking/:id",
+    component:BookComponent,
+  },
+  {
+    path:"manage",
+    component:ManageBookingComponent,
   }
 ];

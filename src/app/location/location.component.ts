@@ -307,7 +307,7 @@ export class LocationComponent {
     const mapElement = document.getElementById(`map-${tourId}`);
     if (mapElement) {
       const iframe = document.createElement('iframe');
-      iframe.src = `https://www.google.com/maps/embed/v1/view?key=AIzaSyDKeBh5wqhqQx2fw5H1y8dXseuvyJVL7G4&center=${latitude},${longitude}&zoom=14`;
+      iframe.src = `https://www.google.com/maps/embed/v1/view?key=AIzaSyClceZzOJ60IwLCoCLxn0BQglWtzfEG-_E&center=${latitude},${longitude}&zoom=14`;
       iframe.width = "100%";
       iframe.height = "300";
       iframe.style.border = "0";

@@ -1,0 +1,132 @@
+<div class="container mx-auto px-4 py-8">
+
+  <div class="bg-white rounded-lg shadow-lg mb-20 p-6">
+    <h3 class="text-xl font-bold text-gray-800 mb-4">Current Bookings</h3>
+    <div class="overflow-x-auto">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+        <tr>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tickets</th>
+          <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+        </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+        <tr *ngFor="let booking of bookingFinal">
+          <td class="px-6 py-4 whitespace-nowrap">{{booking.name}}</td>
+          <td class="px-6 py-4 whitespace-nowrap">{{booking.email}}</td>
+          <td class="px-6 py-4 whitespace-nowrap">{{booking.phone}}</td>
+          <td class="px-6 py-4 whitespace-nowrap">{{booking.date}}</td>
+          <td class="px-6 py-4 whitespace-nowrap">{{booking.tickets}}</td>
+          <td class="px-6 py-4 whitespace-nowrap">
+            <div class="flex gap-2">
+              <button (click)="editBooking(booking)"
+                      class="px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700">
+                Edit
+              </button>
+              <button (click)="deleteBooking(booking.bookingId)"
+                      class="px-3 py-1 bg-red-600 text-white rounded hover:bg-red-700">
+                Delete
+              </button>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Booking Form -->
+  <div *ngIf="isEditing" class="bg-white rounded-lg shadow-lg p-6 mb-8">
+    <form [formGroup]="bookingForm"  (ngSubmit)="onSubmit()">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">Manage Booking</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Name Field -->
+        <div class="col-span-2">
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+          <input type="text" id="name" formControlName="name"
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+          <div *ngIf="bookingForm.get('name')?.invalid && bookingForm.get('name')?.touched"
+               class="mt-1 text-sm text-red-600">
+            Name is required
+          </div>
+        </div>
+
+        <!-- Email Fields -->
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+          <input type="email" id="email" formControlName="email"
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+          <div *ngIf="bookingForm.get('email')?.invalid && bookingForm.get('email')?.touched"
+               class="mt-1 text-sm text-red-600">
+            Please enter a valid email
+          </div>
+        </div>
+
+        <div>
+          <label for="confirmEmail" class="block text-sm font-medium text-gray-700 mb-1">Confirm Email</label>
+          <input type="email" id="confirmEmail" formControlName="confirmEmail"
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+          <div *ngIf="bookingForm.get('confirmEmail')?.invalid && bookingForm.get('confirmEmail')?.touched"
+               class="mt-1 text-sm text-red-600">
+            Emails must match
+          </div>
+        </div>
+
+        <!-- Phone & Date Fields -->
+        <div>
+          <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+          <input type="tel" id="phone" formControlName="phone"
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+          <div *ngIf="bookingForm.get('phone')?.invalid && bookingForm.get('phone')?.touched"
+               class="mt-1 text-sm text-red-600">
+            Enter valid 10-digit number
+          </div>
+        </div>
+
+        <div>
+          <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Booking Date</label>
+          <input type="date" id="date" formControlName="date"
+                 class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500">
+        </div>
+
+        <!-- Tickets Field -->
+        <div>
+          <label for="tickets" class="block text-sm font-medium text-gray-700 mb-1">Number of Tickets</label>
+          <div class="flex items-center">
+            <input type="number" id="tickets" formControlName="tickets" min="1" readonly
+                   class="w-20 px-3 py-2 text-center border-t border-b border-gray-300">
+          </div>
+        </div>
+
+        <!-- Message Field -->
+        <div class="col-span-2">
+          <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Additional Message</label>
+          <textarea id="message" formControlName="message" rows="3"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500"></textarea>
+        </div>
+      </div>
+
+      <!-- Form Buttons -->
+      <div class="flex gap-4 mt-6">
+        <button type="submit" [disabled]="!bookingForm.valid"
+                class="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50">
+          Save Booking
+        </button>
+        <button type="button" (click)="resetForm()"
+                class="px-6 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700">
+          Reset
+        </button>
+        <button type="button" (click)="isEditing = false"
+                class="px-6 py-2 bg-red-600 text-white rounded-md hover:bg-red-700">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>

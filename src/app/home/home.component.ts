@@ -4,7 +4,7 @@ import {RouterLink, RouterOutlet} from "@angular/router";
 import {SearchComponent} from "../search/search.component";
 import {TourService} from "../tour.service";
 import {MatPaginatorModule, PageEvent} from "@angular/material/paginator";
-
+import {NgxPaginationModule} from 'ngx-pagination';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -14,6 +14,7 @@ import {MatPaginatorModule, PageEvent} from "@angular/material/paginator";
     RouterLink,
     SearchComponent,
     MatPaginatorModule,
+    NgxPaginationModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -33,8 +34,6 @@ export class HomeComponent {
       this.tours = [...this.tours,...data.a];
       this.totalItems = this.tours.length;
       this.items = this.getData(this.currentPage, this.pageSize);
-
-
     });
   }
 
