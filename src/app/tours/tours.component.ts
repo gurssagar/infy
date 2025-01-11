@@ -6,6 +6,7 @@ import { LocationComponent } from "../location/location.component";
 import { BookComponent } from "../book/book.component";
 import { ActivatedRoute } from "@angular/router";
 import { TourService } from "../tour.service";
+import {MenuComponent} from "../menu/menu.component";
 
 @Component({
   selector: 'app-tours',
@@ -15,7 +16,8 @@ import { TourService } from "../tour.service";
     TourPlanComponent,
     GalleryComponent,
     LocationComponent,
-    BookComponent
+    BookComponent,
+    MenuComponent
   ],
   templateUrl: './tours.component.html',
   styleUrl: './tours.component.css'

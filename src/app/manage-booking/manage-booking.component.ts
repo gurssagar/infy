@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TourService } from '../tour.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgForOf, NgIf } from '@angular/common';
-import { forkJoin } from 'rxjs';
+import {forkJoin, map} from 'rxjs';
 @Component({
   selector: 'app-manage-booking',
   standalone: true,
@@ -20,8 +20,10 @@ export class ManageBookingComponent implements OnInit {
   bookings: any;
   bookingFinal:any=[];
   dataSubmit:any;
+  tempBooking:any;
   isEditing: boolean = false;
-  bookingData:any
+  bookingData:any;
+  tours:any=[];
   constructor(
     private fb: FormBuilder,
     private tourService: TourService
@@ -41,9 +43,31 @@ export class ManageBookingComponent implements OnInit {
 
   public name="9289829766";
   ngOnInit(): void {
+    // To get The image and other details from getTours
+    forkJoin({
+      userBookings: this.tourService.getUserBookings(),
+      bookings: this.tourService.getBookings(),
+      tours: this.tourService.getTours()
+    }).pipe(
+      map(({ userBookings, bookings, tours }) => {
+        // Get user's booking IDs
+        const userBookingIds = userBookings[this.name].map((b: { bookingId: string }) => b.bookingId);
+
+        // Get full booking details for user's bookings
+        const userBookingDetails = userBookingIds.map((id: string) => bookings[id]);
+
+        // Match tours with booking details
+        return tours.a.filter((tour: { id: string }) =>
+          userBookingDetails.some((booking: { tourId: string }) => booking.tourId === tour.id)
+        );
+      })
+    ).subscribe(matchedTours => {
+      this.tours = matchedTours;
+      console.log('Matched tours:', this.tours);
+    });
+    // To modify records
     this.tourService.getUserBookings().subscribe(
       data => {
-        const name = "9289829766";
         this.bookings = data[this.name];
         // Loop through each booking to get bookingId
         this.bookings.forEach((booking: any) => {
@@ -52,7 +76,23 @@ export class ManageBookingComponent implements OnInit {
           this.tourService.getBookings().subscribe(
             data => {
               this.bookingFinal=[...this.bookingFinal,data[booking.bookingId]];
-              console.log(this.bookingFinal);
+              this.bookingFinal.forEach(
+                (booking: any) => {
+                  this.tourService.getTours().subscribe(
+                    (data) => {
+                      this.bookingData = data.a;
+                      this.bookingData.forEach(
+                        (tour: any) => {
+                          if (tour.id === booking.tourId) {
+
+
+                          }
+                        }
+                      )
+                    }
+                  )
+                }
+              )
             }
           );
         });
