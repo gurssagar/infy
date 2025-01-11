@@ -55,6 +55,24 @@ export class HomeComponent {
     this.items = this.getData(this.currentPage, this.pageSize);
   }
 
+  onSortChange(event: Event) {
+    const value = (event.target as HTMLSelectElement).value;
+
+    switch(value) {
+      case 'priceLow':
+        this.sortByPrice('low');
+        break;
+      case 'priceHigh':
+        this.sortByPrice('high');
+        break;
+      case 'name':
+        this.sortByName();
+        break;
+      case 'date':
+        // Implement date sorting if needed
+        break;
+    }
+  }
 
   pageChanged(event: PageEvent) {
     this.currentPage = event.pageIndex;
@@ -66,7 +84,8 @@ export class HomeComponent {
   private getData(currentPage: number, pageSize: number): any[] {
     const startIndex = currentPage * pageSize;
     const endIndex = startIndex + pageSize;
-    return this.tours.slice(startIndex, endIndex);
-
+    const arrayToUse = this.sorted.length > 0 ? this.sorted : this.tours;
+    return arrayToUse.slice(startIndex, endIndex);
   }
+
 }
