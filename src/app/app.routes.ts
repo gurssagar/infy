@@ -26,7 +26,7 @@ export const routes: Routes = [{
     component: LocationComponent
   },
   {
-    path: "compare/:id",
+    path: "compare",
     component: CompareComponent
   },
   {
